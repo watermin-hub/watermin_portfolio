@@ -103,12 +103,15 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 80vh;
+    /* height: 100vh;  Removed fixed height */
+    min-height: 100vh; /* Allow it to grow if text is too long */
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: flex-start;
     padding-top: 4rem;
+    padding-bottom: 12rem; /* Increased to prevent overlap */
     position: relative;
     background-image: radial-gradient(circle at 10% 20%, rgba(161, 196, 253, 0.2) 0%, rgba(194, 233, 251, 0.0) 90%),
                       radial-gradient(circle at 90% 80%, rgba(162, 250, 244, 0.2) 0%, rgba(194, 233, 251, 0.0) 90%);
@@ -217,7 +220,7 @@ ul {
     width: 100%;
     height: auto;
     max-width: 400px; /* Prevent it from getting too huge */
-    aspect-ratio: 3/4; /* Good standard portrait ratio */
+    aspect-ratio: 1/1; /* Good standard portrait ratio */
     object-fit: cover;
     border-radius: 24px;
     box-shadow: var(--shadow-soft);
@@ -535,6 +538,9 @@ footer {
         padding-top: 8rem; /* Space for taller navbar */
         /* text-align: center; Removed to follow desktop alignment */
         width: 100%;
+        height: auto; /* Allow to grow */
+        min-height: 100vh; /* At least full screen */
+        padding-bottom: 6rem; /* Space for scroll indicator */
     }
 
     .hero h1 {
