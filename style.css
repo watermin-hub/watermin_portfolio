@@ -213,6 +213,18 @@ ul {
     box-shadow: var(--shadow-soft);
 }
 
+.about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Prevent it from getting too huge */
+    aspect-ratio: 3/4; /* Good standard portrait ratio */
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    display: block;
+    margin: 0 auto;
+}
+
 .about-info h3 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -488,24 +500,136 @@ footer {
     transition-delay: 0.2s;
 }
 
-/* Responsive */
+/* Responsive & Mobile Optimization */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot, .cursor-outline {
+        display: none; /* Hide custom cursor on touch devices */
+    }
+}
+
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .navbar {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        background: rgba(253, 251, 247, 0.95);
     }
     
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding-top: 8rem; /* Space for taller navbar */
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        margin: 0 auto; /* Center align */
+    }
+    
+    .scroll-indicator {
+        bottom: 1rem;
+    }
+
+    /* Adjust Section Spacing */
+    .about, .projects, .contact {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
     
-    .project-card, .project-card.reverse {
+    .img-placeholder {
+        min-height: 250px;
+    }
+
+    .skills-grid {
         grid-template-columns: 1fr;
     }
     
-    .project-card.reverse > div:first-child {
+    .project-list {
+        gap: 4rem;
+    }
+
+    .project-card, .project-card.reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+    
+    /* Ensure visual order is consistent on mobile */
+    .project-card > .project-visual,
+    .project-card.reverse > .project-visual {
         order: 1;
     }
-    .project-card.reverse > div:last-child {
+    
+    .project-card > .project-content,
+    .project-card.reverse > .project-content {
         order: 2;
+    }
+
+    .project-number {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .project-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-desc {
+        font-size: 1.1rem;
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 4rem;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
     }
 }
