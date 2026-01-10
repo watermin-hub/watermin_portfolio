@@ -2,7 +2,7 @@
     --bg-color: #fdfbf7; /* Warm off-white */
     --text-primary: #4a4a4a;
     --text-secondary: #7a7a7a;
-    --accent-color: #ff9a9e; /* Soft Pastel Pink */
+    --accent-color: #ffb7ba; /* Soft Pastel Pink */
     --accent-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); /* Soft Pastel Blue Gradient */
     --card-bg: #ffffff;
     --card-border: #f0f0f0;
@@ -103,7 +103,7 @@ ul {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -513,9 +513,11 @@ footer {
     }
 
     .navbar {
-        padding: 1rem 1.5rem;
-        flex-direction: column;
-        gap: 1rem;
+        padding: 1rem 1.2rem; /* Slightly reduced padding */
+        flex-direction: row; /* Keep row direction */
+        justify-content: space-between;
+        align-items: center;
+        gap: 0; /* Let space-between handle it */
         background: rgba(253, 251, 247, 0.95);
     }
     
@@ -524,13 +526,14 @@ footer {
     }
 
     .nav-links {
-        gap: 1.5rem;
-        font-size: 0.9rem;
+        gap: 0.8rem; /* Tighter gap */
+        font-size: 0.8rem; /* Smaller font */
+        margin: 0;
     }
 
     .hero {
         padding-top: 8rem; /* Space for taller navbar */
-        text-align: center;
+        /* text-align: center; Removed to follow desktop alignment */
         width: 100%;
     }
 
@@ -541,7 +544,7 @@ footer {
 
     .hero-desc {
         font-size: 1rem;
-        margin: 0 auto; /* Center align */
+        /* margin: 0 auto; Removed centering */
     }
     
     .scroll-indicator {
@@ -581,15 +584,15 @@ footer {
         text-align: left;
     }
     
-    /* Ensure visual order is consistent on mobile */
+    /* Ensure visual (Image) comes FIRST on mobile */
     .project-card > .project-visual,
     .project-card.reverse > .project-visual {
-        order: 1;
+        order: 1 !important;
     }
     
     .project-card > .project-content,
     .project-card.reverse > .project-content {
-        order: 2;
+        order: 2 !important;
     }
 
     .project-number {
@@ -623,10 +626,10 @@ footer {
 
 @media (max-width: 480px) {
     .nav-links {
-        gap: 1rem;
-        font-size: 0.85rem;
-        width: 100%;
-        justify-content: space-between;
+        gap: 0.5rem; /* Even tighter for very small screens */
+        font-size: 0.75rem;
+        width: auto; /* Let it shrink */
+        justify-content: flex-end;
     }
     
     .hero h1 {
