@@ -5,218 +5,496 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketer Im Sumin | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
 
-    <nav class="navbar">
-        <div class="logo">Im Sumin</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">Im Sumin</div>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Copy Link"><i class="fa-solid fa-link"></i></button>
+            </div>
+        </div>
+    </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <h1 class="fade-in-up">데이터에 감각을 더해<br>전략을 만드는<br><span class="highlight">마케터 임수민</span>입니다.</h1>
-                <div class="hero-desc fade-in-up delay-1">
-                    <p>저는 감각이 '왜'를 설명하고, 데이터가 '어떻게'를 보여준다고 믿습니다.</p>
-                    <p>그래서 어떤 문제든 숫자와 근거로 확인하는 습관을 가지고 있습니다.</p>
-                    <p>반대로 데이터만으로는 보이지 않는 사람의 심리와 흐름도 놓치지 않으려 합니다.</p>
-                    <br>
-                    <p>이 두 가지 시각을 연결하며, 브랜드가 사람에게 닿는 방식과<br>더 나은 경험을 만들 수 있는 전략을 고민하고 있습니다.</p>
-                </div>
+        
+        <!-- 1. Intro / Hero Section (Slide 2) -->
+        <section class="hero-section">
+            <h1 class="main-copy">
+                데이터에 감각을 더해 전략을 만드는<br>
+                마케터 <span class="highlight-text">임수민입니다.</span>
+            </h1>
+            <div class="sub-copy">
+                <p>저는 감각이 '왜'를 설명하고, 데이터가 '어떻게'를 보여준다고 믿습니다.</p>
+                <p>그래서 어떤 문제든 숫자와 근거로 확인하는 습관을 가지고 있습니다.<br>
+                반대로 데이터만으로는 보이지 않는 사람의 심리와 흐름도 놓치지 않으려 합니다.</p>
+                <p>이 두 가지 시각을 연결하며, 브랜드가 사람에게 닿는 방식과<br>
+                더 나은 경험을 만들 수 있는 전략을 고민하고 있습니다.</p>
             </div>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <div class="arrow"></div>
+            <div class="portfolio-year">
+                <h3>Portfolio<br>2025</h3>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-image">
-                             <!-- [사용자 가이드]
-                             1. 'assets' 폴더에 본인의 프로필 사진을 넣으세요.
-                             2. 사진 파일 이름을 'profile.jpg'로 변경하거나, 
-                                아래 src="assets/profile.jpg" 부분을 실제 파일명으로 수정하세요.
-                        -->
-                        <img src="assets/prof.png" alt="min Profile">
+        <!-- 2. Key Projects TOC (Slide 1) -->
+        <section class="key-projects-toc section-container">
+            <div class="toc-header">
+                <h2>KEY<br>PROJECT</h2>
+                <div class="toc-divider"></div>
+            </div>
+            <div class="toc-list">
+                <a href="#beautrip" class="toc-item">
+                    <span class="toc-num">01</span>
+                    <span class="toc-title"><strong>Beautrip</strong> : Marketing + Data Project</span>
+                </a>
+                <a href="#beme" class="toc-item">
+                    <span class="toc-num">02</span>
+                    <span class="toc-title"><strong>be:me</strong> : Data Project</span>
+                </a>
+                <a href="#innerkurly" class="toc-item">
+                    <span class="toc-num">03</span>
+                    <span class="toc-title"><strong>InnerKurly</strong> : Marketing Project</span>
+                </a>
+                <a href="#dataviz" class="toc-item">
+                    <span class="toc-num">04</span>
+                    <span class="toc-title"><strong>Data Visualization</strong></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Profile & Skills (Slide 3) -->
+        <section class="profile-section section-container">
+            <div class="profile-grid">
+                <!-- Left: Image -->
+                <div class="profile-left">
+                    <div class="profile-img-container">
+                        <img src="assets/prof.png" alt="Im Sumin" class="profile-img" onerror="this.src='https://via.placeholder.com/250'">
                     </div>
-                    <div class="about-info">
-                        <h3>임수민 <span class="en-name">Im Sumin</span></h3>
-                        <ul class="info-list">
-                            <li><strong>Birth</strong> 1997.03.21</li>
-                            <li><strong>Phone</strong> 010.7311.5045</li>
-                            <li><strong>Email</strong> imimsoomin@gmail.com</li>
+                </div>
+                <!-- Right: Info -->
+                <div class="profile-right">
+                    <div class="profile-header">
+                        <h2>임수민</h2>
+                        <div class="contact-info">
+                            <p>1997.03.21</p>
+                            <p>imimsoomin@gmail.com</p>
+                            <p>010.7311.5045</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-container">
+                        <h3>자격사항</h3>
+                        <ul class="cert-list">
+                            <li>SQL 개발자(SQLD)</li>
+                            <li>데이터 분석 준전문가(ADsP)</li>
+                            <li>전산세무 2급 (국가공인)</li>
+                            <li>TAT 2급</li>
+                            <li>ERP회계정보관리사 2급</li>
+                            <li>ERP인사정보관리사 2급</li>
+                            <li>전산회계 1급 (국가공인)</li>
+                            <li>컴퓨터활용능력 2급</li>
+                            <li>전산회계운용사 3급</li>
+                            <li>워드프로세서 3급</li>
                         </ul>
+                    </div>
+
+                    <div class="skills-container">
+                        <h3>Skills</h3>
+                        <!-- Skill Item -->
+                        <div class="skill-item">
+                            <span class="skill-name">Capcut</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Figma</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GA4</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Hotjar</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                        </div>
+                         <div class="skill-item">
+                            <span class="skill-name">Clarity</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                        </div>
+                        <!-- Right Column Skills -->
+                         <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 60%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+                        </div>
+                         <div class="skill-item">
+                            <span class="skill-name">Cursor</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GitHub</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 65%;"></div></div>
+                        </div>
+                         <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+                        </div>
+                         <div class="skill-item">
+                            <span class="skill-name">Tableau</span>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Project Details -->
+        <div class="projects-wrapper">
+            
+            <!-- Project 1: Beautrip -->
+            <section id="beautrip" class="project-card section-container">
+                <div class="project-header">
+                    <span class="project-category">Marketing & Data Project</span>
+                    <h2 class="project-title">BeauTrip : 외국인 타겟 여행 일정 기반 시술 추천 웹앱</h2>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>기간</strong> 2025.11 ~ 2026.01 (6주)</div>
+                    <div class="meta-item"><strong>인원</strong> 5명</div>
+                    <div class="meta-item"><strong>기여도</strong> 80%</div>
+                </div>
+
+                <div class="project-tools">
+                    <strong>Tool</strong> Next.js / Python(Pandas, Selenium) / Figma / GA4 / Hotjar / Power BI
+                </div>
+
+                <div class="project-description">
+                    <p class="project-summary"><strong>외국인 대상 ‘여행 일정 기반’ K-뷰티·메디컬 시술 추천 웹앱 프로토타입을 구축하고, 광고 A/B + GA4/Hotjar로 행동 데이터를 수집해 전략을 검증했습니다.</strong></p>
+                    <ul class="project-bullets">
+                        <li>경쟁사 데이터 크롤링·정제(시술/병원 DB) 및 다국어 구조 설계</li>
+                        <li>일정/회복기간 기반 추천·랭킹 로직 + 리뷰 잠재력 예측 모델 적용(R² 72.8%, AUC 75.7%)</li>
+                        <li>Meta 콘텐츠 톤 A/B 집행 및 GA4·Hotjar·Clarity로 유저 여정/전환 이전 행동 지표 분석</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group" style="text-align: center; margin-top: 20px;">
+                    <button type="button" class="view-more-btn" onclick="toggleProjectDetail('beautrip', event)">View Project Details <i class="fas fa-chevron-down"></i></button>
+                </div>
+
+                <!-- Beautrip Detail Section -->
+                <div id="beautrip-detail" class="project-detail-content" style="display: none;">
+                    <!-- Detail Navigation -->
+                    <div class="detail-nav">
+                        <button class="nav-item active" onclick="switchDetailTab('beautrip', 'problem')">01 Problem</button>
+                        <button class="nav-item" onclick="switchDetailTab('beautrip', 'strategy')">02 Strategy</button>
+                        <button class="nav-item" onclick="switchDetailTab('beautrip', 'data')">03 Data/Prototype</button>
+                        <button class="nav-item" onclick="switchDetailTab('beautrip', 'tracking')">04 Tracking</button>
+                        <button class="nav-item" onclick="switchDetailTab('beautrip', 'meaning')">05 Meaning</button>
+                    </div>
+
+                    <!-- 01 Problem -->
+                    <div id="beautrip-problem" class="detail-section active">
+                        <h4>01 PROBLEM <span class="sub-h">정보는 넘치지만, '외국인을 위한' 플랫폼은 없다</span></h4>
                         
-                        <div class="certifications">
-                            <h4>자격사항</h4>
-                            <p>SQL 개발자(SQLD) 데이터 분석 준전문가(ADsP) 전산세무2급 TAT 2급 
-                                ERP회계정보관리사 2급 ERP인사정보관리사 2급 컴퓨터활용능력 2급 
-                                FAT 1급 전산회계1급 전산회계운용사 3급</p>
+                        <div class="problem-grid">
+                            <div class="problem-card">
+                                <h5>😰 여행객의 불안 (Pain Point)</h5>
+                                <ul class="pain-points">
+                                    <li>"정보는 너무 많은데, 광고인지 진짜인지 모르겠어요."</li>
+                                    <li>"회복 기간 때문에 여행 일정이 망가질까 두려워요."</li>
+                                    <li>"외국인이라고 바가지 요금을 쓸까 봐 걱정돼요."</li>
+                                </ul>
+                            </div>
+                            <div class="problem-card">
+                                <h5>📉 시장의 한계 (Market Gap)</h5>
+                                <div class="market-stat">
+                                    <div class="stat-item">
+                                        <span class="num">1.4조</span>
+                                        <span class="label">외국인 의료관광 지출</span>
+                                    </div>
+                                    <div class="stat-icon">VS</div>
+                                    <div class="stat-item warning">
+                                        <span class="num">No Platform</span>
+                                        <span class="label">한국인 기준 정보만 존재</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- <div class="certifications">
-                            <h4>자격사항</h4>
-                            <p>SQL 개발자(SQLD)</p> <p>데이터 분석 준전문가(ADsP)</p> <p>전산세무2급</p> <p>TAT 2급</p>
-                            <p>ERP회계정보관리사 2급</p> <p>ERP인사정보관리사 2급</p> <p>컴퓨터활용능력 2급</p>
-                            <p>FAT 1급</p> <p>전산회계1급</p> <p>전산회계운용사 3급</p>
-                        </div> -->
+
+                        <div class="persona-section">
+                            <h5>Target Persona : 국가별 다른 결정 리스크</h5>
+                            <div class="persona-cards">
+                                <div class="p-card">
+                                    <span class="flag">🇯🇵</span>
+                                    <strong>Miyuki (20대 후반)</strong>
+                                    <p>"실패하고 싶지 않아."</p>
+                                    <span>#실패회피 #자연스러움</span>
+                                </div>
+                                <div class="p-card">
+                                    <span class="flag">🇨🇳</span>
+                                    <strong>Li An Cui (20대)</strong>
+                                    <p>"어떤 정보가 진짜야?"</p>
+                                    <span>#정보기반 #설명중시</span>
+                                </div>
+                                <div class="p-card">
+                                    <span class="flag">🇺🇸</span>
+                                    <strong>Emily (30대)</strong>
+                                    <p>"안전하고 합리적인가?"</p>
+                                    <span>#Trust #ValueForMoney</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 Strategy -->
+                    <div id="beautrip-strategy" class="detail-section">
+                        <h4>02 STRATEGY <span class="sub-h">불안 해소를 위한 '여행 일정 기반' 큐레이션</span></h4>
+                        
+                        <div class="strategy-core">
+                            <h5>Core Strategy : Travel Schedule Based</h5>
+                            <div class="strategy-diagram">
+                                <div class="s-step">
+                                    <i class="fas fa-clock"></i>
+                                    <span>회복 기간</span>
+                                </div>
+                                <div class="s-arrow">+</div>
+                                <div class="s-step">
+                                    <i class="fas fa-hospital-user"></i>
+                                    <span>시술 소요 시간</span>
+                                </div>
+                                <div class="s-arrow">=</div>
+                                <div class="s-step result">
+                                    <i class="fas fa-plane-departure"></i>
+                                    <span>여행 일정 적합성</span>
+                                </div>
+                            </div>
+                            <p class="s-desc">단순 인기 시술 추천이 아닌, <strong>"내 여행 일정을 망치지 않는"</strong> 시술만을 큐레이션하여 결정의 불안을 제거합니다.</p>
+                        </div>
+
+                        <div class="funnel-strategy">
+                            <h5>Trust Funnel Strategy</h5>
+                            <div class="funnel-box">
+                                <div class="f-stage"><strong>Search/Share</strong><br>신뢰 탐색 및 공유</div>
+                                <div class="f-arrow">⬇</div>
+                                <div class="f-stage action"><strong>Decision</strong><br>신뢰 판단 (불안 제거)</div>
+                                <div class="f-arrow">⬇</div>
+                                <div class="f-stage"><strong>Action</strong><br>예약 및 방문</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 Data/Prototype -->
+                    <div id="beautrip-data" class="detail-section">
+                        <h4>03 DATA & PROTOTYPE <span class="sub-h">리뷰 잠재력을 예측하는 추천 알고리즘</span></h4>
+                        
+                        <div class="ml-section">
+                            <h5>🤖 ML Based Recommendation (R² 72.8%)</h5>
+                            <div class="ml-process">
+                                <div class="input">
+                                    <span>가격 / 할인율</span>
+                                    <span>카테고리</span>
+                                </div>
+                                <div class="process">
+                                    <span>RandomForest</span>
+                                    <span>XGBoost</span>
+                                </div>
+                                <div class="output">
+                                    <strong>Review Potential Score</strong>
+                                    <span>리뷰 잠재력 점수 예측</span>
+                                </div>
+                            </div>
+                            <p class="data-desc">단순 판매량이 아닌, <strong>'리뷰가 많이 달릴(만족도가 높을) 시술'</strong>을 예측하여 상단에 노출합니다.</p>
+                        </div>
+
+                        <div class="data-collection">
+                            <h5>Data Pipeline</h5>
+                            <ul class="data-stats">
+                                <li><i class="fas fa-database"></i> <strong>15,714</strong> 시술 데이터</li>
+                                <li><i class="fas fa-hospital"></i> <strong>1,224</strong> 병원 데이터</li>
+                                <li><i class="fas fa-filter"></i> 3사(강남/여신/바비톡) 통합</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 04 Tracking -->
+                    <div id="beautrip-tracking" class="detail-section">
+                        <h4>04 TRACKING <span class="sub-h">"물어보지 않고, 사용하게 만들고 관찰했습니다."</span></h4>
+                        
+                        <div class="ab-test-result">
+                            <h5>🇺🇸 USA A/B Test Result</h5>
+                            <div class="ab-chart">
+                                <div class="ab-item">
+                                    <span class="label">Local Style (FB)</span>
+                                    <div class="bar big-bar" style="width: 80%;">CTR 10.99% (Winner! 🏆)</div>
+                                </div>
+                                <div class="ab-item">
+                                    <span class="label">K-Style (FB)</span>
+                                    <div class="bar" style="width: 30%;">CTR 4.32%</div>
+                                </div>
+                            </div>
+                            <p class="insight-text">💡 <strong>Insight:</strong> 미국 타겟은 '예쁜 이미지(K-Style)'보다 <strong>'신뢰할 수 있는 로컬 감성 정보'</strong>에 반응했습니다.</p>
+                        </div>
+
+                        <div class="user-journey-data">
+                            <h5>User Funnel Data</h5>
+                            <div class="funnel-steps">
+                                <div class="step">
+                                    <span class="s-val">75%</span>
+                                    <span class="s-label">일정 추가 시도</span>
+                                </div>
+                                <div class="step">
+                                    <span class="s-val">58%</span>
+                                    <span class="s-label">일정 저장 완료</span>
+                                </div>
+                                <div class="step">
+                                    <span class="s-val">25%</span>
+                                    <span class="s-label">문의 완료</span>
+                                </div>
+                            </div>
+                            <p class="data-desc">핵심 기능인 <strong>'일정 추가'</strong>의 사용률이 75%로 매우 높게 나타나, 가설이 유효함을 입증했습니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- 05 Meaning -->
+                    <div id="beautrip-meaning" class="detail-section">
+                        <h4>05 MEANING <span class="sub-h">전환을 위한 '행동'이 먼저 바뀌다</span></h4>
+                        
+                        <div class="meaning-stats">
+                            <div class="m-card">
+                                <i class="fas fa-hourglass-half"></i>
+                                <strong>+76%</strong>
+                                <span>체류 시간 증가</span>
+                            </div>
+                            <div class="m-card">
+                                <i class="fas fa-search-plus"></i>
+                                <strong>+202%</strong>
+                                <span>탐색 깊이 증가</span>
+                            </div>
+                            <div class="m-card highlight">
+                                <i class="fas fa-comment-dots"></i>
+                                <strong>+491%</strong>
+                                <span>후기 접근 증가</span>
+                            </div>
+                        </div>
+
+                        <div class="final-message">
+                            <blockquote>
+                                "이 프로젝트의 진짜 성과는 '얼마나 팔았는가'가 아닙니다.<br>
+                                <strong>'신뢰의 구축을 어디까지 데이터로 설명할 수 있는가'</strong>를 증명한 과정입니다."
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="skills-section">
-                    <h3>Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Tools & Analytics</h4>
-                            <div class="skill-bar"><span class="label">Figma</span><div class="bar"><div class="fill" style="width: 80%"></div></div></div>
-                            <div class="skill-bar"><span class="label">GA4</span><div class="bar"><div class="fill" style="width: 90%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Hotjar</span><div class="bar"><div class="fill" style="width: 75%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Clarity</span><div class="bar"><div class="fill" style="width: 70%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Zapier</span><div class="bar"><div class="fill" style="width: 60%"></div></div></div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Data & Development</h4>
-                            <div class="skill-bar"><span class="label">Python</span><div class="bar"><div class="fill" style="width: 50%"></div></div></div>
-                            <div class="skill-bar"><span class="label">SQL</span><div class="bar"><div class="fill" style="width: 65%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Cursor</span><div class="bar"><div class="fill" style="width: 70%"></div></div></div>
-                            <div class="skill-bar"><span class="label">GitHub</span><div class="bar"><div class="fill" style="width: 55%"></div></div></div>
-                        </div>
-                         <div class="skill-category">
-                            <h4>Visualization & Office</h4>
-                            <div class="skill-bar"><span class="label">Power BI</span><div class="bar"><div class="fill" style="width: 60%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Looker Studio</span><div class="bar"><div class="fill" style="width: 65%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Tableau</span><div class="bar"><div class="fill" style="width: 60%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Notion</span><div class="bar"><div class="fill" style="width: 95%"></div></div></div>
-                            <div class="skill-bar"><span class="label">Excel</span><div class="bar"><div class="fill" style="width: 90%"></div></div></div>
-                        </div>
-                    </div>
+            <!-- Project 2: be:me -->
+            <section id="beme" class="project-card section-container" style="background-color: #FAFAFA;">
+                <div class="project-header">
+                    <span class="project-category">Data Project</span>
+                    <h2 class="project-title">Kurly Universe_be:me : 감정·행동 데이터 기반 루틴 관리 앱</h2>
+                    <a href="#" class="view-more-btn" style="background-color: #BADA55;">be:me 보러 가기 ></a>
                 </div>
-            </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Key Projects</h2>
-                <div class="project-list">
-                    <!-- Project 1 -->
-                    <article class="project-card fade-in-up">
-                        <div class="project-content">
-                            <span class="project-number">01</span>
-                            <h3>InnerKurly <span class="project-type">Marketing Project</span></h3>
-                            <p class="project-desc">건강 식단 구독 서비스 기획·개발 프로젝트</p>
-                            <ul class="project-meta">
-                                <li><strong>기간</strong> 2025.09 - 2025.10 (3주)</li>
-                                <li><strong>인원</strong> 4명</li>
-                                <li><strong>기여도</strong> nn%</li>
-                            </ul>
-                            <p class="summary">컬리의 아이덴티티를 살린 건강 식단 구독 서비스 제안. 타겟 페르소나 설정 및 CRM 마케팅 전략 수립.</p>
-                            <div class="tags">
-                                <span>Persona</span><span>CRM</span><span>GA4</span>
-                            </div>
-                        </div>
-                        <div class="project-visual">
-                            <!-- InnerKurly Image -->
-                             <img src="assets/01.png" alt="InnerKurly Project">
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card reverse fade-in-up">
-                         <div class="project-visual">
-                            <!-- be:me Image -->
-                             <img src="assets/02.png" alt="be:me Project">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-number">02</span>
-                            <h3>be:me <span class="project-type">Data Project</span></h3>
-                            <p class="project-desc">루틴·감정 기반 웰니스 앱 기획 및 프로토타이핑</p>
-                            <ul class="project-meta">
-                                <li><strong>기간</strong> 2025.10 - 2025.11 (3주)</li>
-                                <li><strong>인원</strong> 4명</li>
-                                <li><strong>기여도</strong> nn%</li>
-                            </ul>
-                            <p class="summary">사용자의 루틴과 감정을 데이터로 분석하여 맞춤형 웰니스 솔루션을 제공하는 앱 기획.</p>
-                            <div class="tags">
-                                <span>Wellness App</span><span>Data Analysis</span><span>Prototyping</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card fade-in-up">
-                        <div class="project-content">
-                            <span class="project-number">03</span>
-                            <h3>Beautrip <span class="project-type">Marketing + Data Project</span></h3>
-                            <p class="project-desc">뷰티와 여행을 결합한 새로운 트렌드 제안</p>
-                             <ul class="project-meta">
-                                <li><strong>기간</strong> 2025.11 - 2025.12</li>
-                                <li><strong>인원</strong> 4명</li>
-                            </ul>
-                            <p class="summary">뷰티 관심층을 위한 맞춤형 여행 코스 및 데이터 기반 마케팅 전략.</p>
-                             <div class="tags">
-                                <span>Beauty</span><span>Travel</span><span>Trend Analysis</span>
-                            </div>
-                        </div>
-                         <div class="project-visual">
-                            <!-- Beautrip Image -->
-                             <img src="assets/03.png" alt="Beautrip Project">
-                        </div>
-                    </article>
-
-                    <!-- Project 4 -->
-                    <article class="project-card reverse fade-in-up">
-                         <div class="project-visual">
-                            <!-- Data Viz Image -->
-                             <img src="assets/04.png" alt="Data Visualization Project">
-                        </div>
-                        <div class="project-content">
-                            <span class="project-number">04</span>
-                            <h3>Data Visualization <span class="project-type">Design Task</span></h3>
-                            <p class="project-desc">Figma를 활용한 데이터 시각화 수행과제</p>
-                             <ul class="project-meta">
-                                <li><strong>Task</strong> 정보의 시각화 및 직관적 전달</li>
-                                <li><strong>Tool</strong> Figma</li>
-                            </ul>
-                            <p class="summary">복잡한 데이터를 직관적이고 미려하게 표현하여, 정보 전달력을 극대화한 디자인 과제물입니다.</p>
-                             <div class="tags">
-                                <span>Data Viz</span><span>Infographic</span><span>Figma</span>
-                            </div>
-                        </div>
-                    </article>
+                <div class="project-meta">
+                    <div class="meta-item"><strong>기간</strong> 2025.10 ~ 2025.11 (3주)</div>
+                    <div class="meta-item"><strong>인원</strong> 4명</div>
+                    <div class="meta-item"><strong>기여도</strong> 70%</div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Shall we create strategies together?</h2>
-                <div class="contact-links">
-                    <a href="mailto:imimsoomin@gmail.com" class="contact-btn">imimsoomin@gmail.com</a>
-                    <a href="tel:01073115045" class="contact-btn">010.7311.5045</a>
+                <div class="project-tools">
+                    <strong>Tool</strong> React Native / Python / Figma / GA4 / Firebase / Hotjar
                 </div>
-                <footer>
-                    <p>&copy; 2025 Im Sumin. All rights reserved.</p>
-                </footer>
-            </div>
-        </section>
+
+                <div class="project-description">
+                    <p class="project-summary"><strong>감정·행동 데이터를 기반으로 자기돌봄 사용자 세그먼트를 정의하고, 광고 A/B·GA4/Hotjar·Firebase 데이터를 통해 가설을 검증한 ‘루틴 지속’ 앱 프로토타입입니다.</strong></p>
+                    <ul class="project-bullets">
+                        <li>“사용자 감정 상태에 따라 자기관리 시작/지속 방식이 달라진다” 가설 수립 및 A/B 세그먼테이션 모델링</li>
+                        <li>광고 A/B 성과(CTR/CPC)와 GA4·Firebase 이벤트로 세그먼트별 행동 패턴(탐색/체류/인증) 비교 분석</li>
+                        <li>OpenAI+Firebase 기반의 AI 코칭(리드미) 설계 및 베타테스트를 통한 '공감→자발성' 메커니즘 검증</li>
+                    </ul>
+                </div>
+                
+                 <div class="project-content-box">
+                    <p>루틴·감정 기반 웰니스 앱 프로토타이핑 및 데이터 설계</p>
+                    <p>Report_나를 데이터로 이해하다 / 리드미(ReadMe)는 어떻게 나를 이해할까? 등</p>
+                 </div>
+            </section>
+
+             <!-- Project 3: Inner Kurly -->
+             <section id="innerkurly" class="project-card section-container">
+                <div class="project-header">
+                    <span class="project-category">Marketing Project</span>
+                    <h2 class="project-title">Kurly Universe_Inner Kurly : 프리미엄 웰니스 식단 구독 서비스 마케팅</h2>
+                    <a href="#" class="view-more-btn" style="background-color: #9C27B0; color: white;">InnerKurly 보러 가기 ></a>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>기간</strong> 2025.09 ~ 2025.10 (3주)</div>
+                    <div class="meta-item"><strong>인원</strong> 4명</div>
+                    <div class="meta-item"><strong>기여도</strong> 70%</div>
+                </div>
+
+                <div class="project-tools">
+                    <strong>Tool</strong> HTML/CSS/JS / Figma / GA4 / GTM / Notion
+                </div>
+
+                <div class="project-description">
+                    <p class="project-summary"><strong>컬리의 프리미엄 강점을 ‘점심 구독 + 이너뷰티 루틴’으로 확장한 신규 브랜드/마케팅 전략을 설계하고 CRM·퍼널·추적 지표까지 구축했습니다.</strong></p>
+                    <ul class="project-bullets">
+                        <li>TOFU→MOFU→BOFU 가치사다리, AARRR 퍼널, NSM/OKR/KPI로 성과 구조 정의 및 마케팅 시나리오 구성</li>
+                        <li>프리미엄 런치 구독(Inner Plate) 컨셉 도출 및 STP/페르소나/브랜드 미션 수립</li>
+                        <li>온드미디어/AB테스트/피드광고/오프라인 협업 등 채널별 실행 전략과 이벤트 트래킹(GA4/GTM) 설계</li>
+                    </ul>
+                </div>
+
+                <div class="project-content-box">
+                     <p>CRM 콘텐츠 (이너컬리 웰 페이지, Segment 편입, 개인화 CRM)</p>
+                     <p>Test Page, 페르소나 설정 및 Google Analytics4 / Hotjar 세팅</p>
+                </div>
+            </section>
+
+             <!-- Project 4: Data Visualization -->
+             <section id="dataviz" class="project-card section-container" style="background-color: #FAFAFA;">
+                <div class="project-header">
+                    <span class="project-category">Data Visualization</span>
+                    <h2 class="project-title">데이터 시각화 수행과제</h2>
+                </div>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>기간</strong> 2025.11</div>
+                    <div class="meta-item"><strong>인원</strong> 1명</div>
+                    <div class="meta-item"><strong>기여도</strong> 100%</div>
+                </div>
+
+                <div class="project-tools">
+                    <strong>Tool</strong> Figma
+                </div>
+
+                <div class="project-content-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <!-- Placeholders for the visualization cards in slide 9 -->
+                     <div style="flex: 1; min-width: 200px; height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #888;">ESS 해외 시장 성장 추이</div>
+                     <div style="flex: 1; min-width: 200px; height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #888;">서울 데이트 지역 분석</div>
+                     <div style="flex: 1; min-width: 200px; height: 150px; background: #eee; display: flex; align-items: center; justify-content: center; border-radius: 8px; color: #888;">스타벅스 가격 지역 비교</div>
+                </div>
+            </section>
+
+        </div>
+
     </main>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px; color: var(--text-sub); border-top: 1px solid #eee; margin-top: 60px;">
+        <p>&copy; 2025 Im Sumin. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
