@@ -75,63 +75,67 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Toggles the visibility of the project detail section.
- * @param {string} projectId - The ID of the project (e.g., 'beautrip').
+ * Toggles the visibility of the project detail card.
+ * @param {string} projectId - The ID of the project.
  * @param {Event} event - The click event object.
  */
-function toggleProjectDetail(projectId, event) {
-    if (event) event.preventDefault();
+function toggleProjectCard(projectId, event) {
+    // Prevent toggling if clicking inside the detail content area
+    if (event.target.closest('.project-detail-content')) {
+        return; // Don't toggle if clicking inside the expanded detail section
+    }
     
+    // Also prevent if clicking specific interactive elements
+    if (event.target.closest('.view-more-btn') || event.target.closest('a') || event.target.closest('button')) {
+        return; // Don't toggle if clicking a specific action button
+    }
+
+    const section = document.getElementById(projectId);
     const detailSection = document.getElementById(`${projectId}-detail`);
-    const btnIcon = event.target.querySelector('i');
+    const icon = section.querySelector('.toggle-icon');
     
-    if (detailSection.style.display === 'none') {
+    // Toggle state
+    if (section.classList.contains('collapsed')) {
+        // Expand
+        section.classList.remove('collapsed');
+        section.classList.add('expanded');
         detailSection.style.display = 'block';
-        if (btnIcon) btnIcon.className = 'fas fa-chevron-up';
+        if(icon) icon.className = 'fas fa-chevron-up toggle-icon';
         
-        // Scroll to the detail section comfortably
-        setTimeout(() => {
-            detailSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
+        // Optional: Scroll to card top if needed
     } else {
+        // Collapse
+        section.classList.remove('expanded');
+        section.classList.add('collapsed');
         detailSection.style.display = 'none';
-        if (btnIcon) btnIcon.className = 'fas fa-chevron-down';
+        if(icon) icon.className = 'fas fa-chevron-down toggle-icon';
     }
 }
 
 /**
- * Switches the active tab in the project detail section.
- * @param {string} projectId - The ID of the project.
- * @param {string} tabName - The name of the tab to switch to (e.g., 'problem', 'strategy').
+ * Switches the active tab in the project detail section (for BeauTrip).
  */
 function switchDetailTab(projectId, tabName) {
-    // 1. Remove active class from all nav items in this project
+    // Prevent card toggle when clicking tab
+    if(event) event.stopPropagation();
+
+    // 1. Remove active class from buttons
     const navItems = document.querySelectorAll(`#${projectId}-detail .nav-item`);
     navItems.forEach(item => item.classList.remove('active'));
     
-    // 2. Add active class to the clicked nav item
-    // Note: We use the event.target, but since we call this inline, we need to find the specific button corresponding to the tab data if passed, 
-    // or efficiently just assume the caller handles the UI state if we were using event listeners. 
-    // However, since we are using inline onclick, we simply target the button text or index. 
-    // A better approach for inline: use the event.currentTarget.
-    // Let's refine the inline call in HTML to pass 'this' or handle it here via querySelector.
-    // Simpler approach: Find the button that calls this function with specific arguments? 
-    // Actually, let's fix the HTML to pass `this` effectively or just loop through buttons to find matching text/attribute.
-    // To be robust, let's look for the specific button based on the function call logic or rely on the HTML structure I built.
-    // The HTML is: onclick="switchDetailTab('beautrip', 'problem')"
-    // We can just iterate the buttons and check their onclick attribute or use a data attribute approach. 
-    
-    // Let's assume the user clicks the button. WE need to visually update the button state.
-    // Let's grab the button that triggered the event.
-    const targetBtn = event.currentTarget; 
-    if (targetBtn) targetBtn.classList.add('active');
+    // 2. Add active to clicked button
+    if(event.currentTarget) event.currentTarget.classList.add('active');
 
-    // 3. Hide all detail sections
+    // 3. Hide all sections
     const sections = document.querySelectorAll(`#${projectId}-detail .detail-section`);
     sections.forEach(sec => sec.classList.remove('active'));
-    
-    // 4. Show the target section
+    sections.forEach(sec => sec.style.display = 'none'); // Ensure display none
+
+    // 4. Show target
     const targetSection = document.getElementById(`${projectId}-${tabName}`);
-    if (targetSection) targetSection.classList.add('active');
+    if (targetSection) {
+        targetSection.classList.add('active');
+        targetSection.style.display = 'block';
+    }
 }
 
