@@ -66,18 +66,19 @@ ul { list-style: none; }
 main {
     max-width: 1000px;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 20px; /* Drastically reduced from 100px */
     padding-bottom: 100px;
 }
 
 .section-container {
-    margin-bottom: 100px;
+    margin-bottom: 0;
     padding: 0 20px;
 }
 
 /* 1. Hero Section */
 .hero-section {
-    padding: 80px 20px 60px 20px;
+    padding: 160px 20px 60px 20px; /* Increased top padding to restore cover page spacing */
+    margin-bottom: 0;
 }
 
 .main-copy {
@@ -117,6 +118,7 @@ main {
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 80px;
 }
 
 .year-light {
@@ -125,66 +127,442 @@ main {
     display: inline-block;
 }
 
-/* 2. Key Projects TOC */
-.key-projects-toc {
+/* Scroll Down CTA Button */
+.scroll-down-cta {
     display: flex;
-    align-items: flex-start;
-    gap: 60px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: #aeaeae;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    border: none;
+    width: auto;
+    height: auto;
 }
 
+.scroll-down-cta:hover {
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.cta-text {
+    display: none;
+}
+
+.cta-icon {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+.scroll-down-cta:hover .cta-icon {
+    animation: none;
+    transform: translateY(3px);
+}
+
+
+
+/* 2. Key Projects TOC - Split Layout */
+.key-projects-toc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    scroll-margin-top: 0;
+    padding: 0 20px;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Default Header (About Me) */
 .toc-header {
-    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* About Me Title Right Align as requested */
+    text-align: right;
+    margin-bottom: 60px; /* Restore smaller margin */
+}
+
+/* Key Projects specific override */
+.key-projects-toc .toc-header {
+    flex: 1;
+    align-items: flex-end; /* Align title to the right side of the left pane */
+    text-align: right;
+    margin-bottom: 0;
 }
 
 .toc-header h2 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 0;
     letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.toc-header h2 strong {
+    font-weight: 700;
+    display: block;
+}
+
+/* X Separator */
+.toc-mid-separator {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toc-mid-separator::before,
+.toc-mid-separator::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #aaa;
+}
+.toc-mid-separator::before {
+    transform: rotate(45deg);
+}
+.toc-mid-separator::after {
+    transform: rotate(-45deg);
 }
 
 .toc-divider {
-    width: 50px;
-    height: 1px;
-    background-color: #000;
+    display: none; /* Removed old divider */
 }
 
 .toc-list {
-    flex: 1;
+    flex: 1.2;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    align-items: flex-start; /* Align list to the left side of the right pane */
 }
 
 .toc-item {
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1.2rem;
+    color: #555;
     display: flex;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid transparent;
+    padding: 8px 0;
+    border-bottom: none; /* Clean look */
     transition: all 0.3s ease;
 }
 
 .toc-item:hover {
     color: var(--accent-blue);
-    padding-left: 10px; /* Slight movement to right */
-    border-bottom: 1px solid #eee;
+    padding-left: 10px;
+    border-bottom: none;
+    transform: none;
 }
 
 .toc-num {
     display: inline-block;
-    width: 35px;
-    color: #888;
+    width: 40px;
+    color: #999;
     font-weight: 300;
-    transition: color 0.3s;
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
 .toc-item:hover .toc-num {
     color: var(--accent-blue);
 }
 
-/* 3. Profile */
+/* 3. Profile - New Design */
+.profile-section {
+    scroll-margin-top: 100px;
+}
+
+.profile-grid-new {
+    display: grid;
+    grid-template-columns: 1fr 280px; /* Swap back: Details Left | Profile Right */
+    gap: 45px; /* Keep smaller gap for CTA visibility */
+    align-items: start;
+}
+
+.profile-left-new {
+    /* Push Profile Image to the Right Column */
+    order: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align on PC */
+    text-align: left;
+    width: 100%;
+}
+
+.profile-right-new {
+    /* Pull Details to the Left Column */
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.profile-img-container-new {
+    width: 220px;
+    height: 280px; /* Restored to 280px */
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #e8e8f0 0%, #f5f5fa 100%);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.profile-img-new {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.contact-info-new {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-info-new p {
+    margin: 4px 0;
+}
+
+.profile-right-new {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cert-container-new h3,
+.skills-container-new h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.cert-list-new {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 30px;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.cert-list-new li {
+    position: relative;
+    padding-left: 0;
+}
+
+.skills-container-new {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skill-category {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: 0.3px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: #fff;
+    border: 1.5px solid #333;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.skill-tag.dimmed {
+    border-color: #ccc;
+    color: #999;
+}
+
+.skill-tag.dimmed:hover {
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+/* Responsive Design - Mobile Optimized */
+@media (max-width: 768px) {
+    /* Main Container adjust */
+    main {
+        padding-top: 80px; /* More space on mobile */
+        padding-bottom: 60px;
+    }
+    
+    .section-container {
+        padding: 0 20px;
+        margin-bottom: 80px;
+    }
+
+    /* About Me Mobile */
+    .profile-grid-new {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .profile-left-new {
+        order: -1; /* Reset order: Profile TOP */
+        display: grid; /* Change to grid for perfect center split */
+        grid-template-columns: 1fr 1fr;
+        align-items: center; /* Center vert */
+        text-align: left; /* Text aligns left in its column */
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .profile-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Left align text group */
+        justify-content: center;
+    }
+
+    .profile-img-container-new {
+        width: 140px; /* Wider image frame as requested */
+        height: 180px; /* Slight height increase */
+        margin-bottom: 0;
+        justify-self: end; /* Align image to the right of left column (towards center) */
+        flex-shrink: 0;
+    }
+    
+    .profile-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profile-name {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+    
+    .contact-info-new {
+        font-size: 0.8rem;
+        align-items: flex-start;
+    }
+
+    .profile-right-new {
+        order: 1; /* Details bottom */
+    }
+
+    .cert-list-new {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important; /* Force 2 columns */
+        gap: 10px 20px;
+    }
+
+    /* Hero Section Mobile Admustment */
+    .hero-section {
+        padding-top: 80px; /* Reduce from 160px to show CTA */
+        padding-bottom: 40px;
+    }
+
+    .main-copy {
+        font-size: 1.8rem; /* Slightly smaller font */
+        margin-bottom: 30px;
+    }
+
+    /* Key Projects Mobile */
+    .key-projects-toc {
+        flex-direction: column;
+        align-items: flex-start; /* Left align everything */
+        justify-content: flex-start;
+        gap: 40px;
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    /* Force Left Align for ALL headers on mobile */
+    .toc-header,
+    .key-projects-toc .toc-header {
+        align-items: flex-start !important; /* Force Left align title on mobile */
+        text-align: left !important;
+        width: 100%;
+        flex: auto;
+        margin-bottom: 20px;
+    }
+
+    .toc-header h2 {
+        font-size: 2.5rem; /* Smaller title */
+    }
+
+    .toc-mid-separator {
+        display: none; /* Hide X separator */
+    }
+
+    .toc-list {
+        align-items: flex-start;
+        width: 100%;
+        flex: auto;
+    }
+    
+    .toc-item {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
+/* Old profile styles - keeping for backward compatibility if needed */
 .profile-grid {
     display: flex;
     gap: 60px;
@@ -226,29 +604,13 @@ main {
     margin: 0;
 }
 
-
-.profile-right {
-    flex: 1;
-}
-
 .profile-header {
     display: flex;
-    justify-content: space-between; /* Name left, Info right */
+    justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 40px;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;
-}
-
-.profile-header h2 {
-    font-size: 2rem;
-}
-
-.contact-info {
-    text-align: right;
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
 }
 
 .cert-container {
@@ -270,7 +632,7 @@ main {
 
 .skills-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns for skills */
+    grid-template-columns: 1fr 1fr;
     column-gap: 40px;
     row-gap: 15px;
 }
@@ -512,6 +874,22 @@ main {
     
     .key-projects-toc { flex-direction: column; gap: 20px; }
     
+    /* New Profile Design - Mobile */
+    .profile-grid-new {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .profile-img-container-new {
+        width: 180px;
+        height: 230px;
+    }
+    
+    .cert-list-new {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Old Profile Design - Mobile */
     .profile-grid { flex-direction: column; }
     .profile-left { flex: auto; width: 100%; }
     .profile-img { width: 100%; max-width: 300px; }
