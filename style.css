@@ -297,7 +297,7 @@ main {
 .profile-grid-new {
     display: grid;
     grid-template-columns: 1fr 280px; /* Swap back: Details Left | Profile Right */
-    gap: 45px; /* Keep smaller gap for CTA visibility */
+    gap: 40px; /* Keep smaller gap for CTA visibility */
     align-items: start;
 }
 
@@ -323,13 +323,13 @@ main {
     order: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     text-align: left;
 }
 
 .profile-img-container-new {
-    width: 220px;
-    height: 280px; /* Restored to 280px */
+    width: 260px;
+    height: 320px; /* Restored to 280px */
     margin-bottom: 20px;
     overflow: hidden;
     border-radius: 20px;
@@ -360,11 +360,6 @@ main {
     margin: 4px 0;
 }
 
-.profile-right-new {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 .cert-container-new h3,
 .skills-container-new h3 {
@@ -478,8 +473,8 @@ main {
     }
 
     .profile-img-container-new {
-        width: 140px; /* Wider image frame as requested */
-        height: 180px; /* Slight height increase */
+        width: 160px; /* Wider image frame as requested */
+        height: 200px; /* Slight height increase */
         margin-bottom: 0;
         justify-self: end; /* Align image to the right of left column (towards center) */
         flex-shrink: 0;
@@ -881,8 +876,8 @@ main {
     }
     
     .profile-img-container-new {
-        width: 180px;
-        height: 230px;
+        width: 200px;
+        height: 250px;
     }
     
     .cert-list-new {
